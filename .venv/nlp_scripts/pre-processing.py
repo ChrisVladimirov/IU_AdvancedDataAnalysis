@@ -10,7 +10,7 @@ corpus = pd.read_csv('C:/Users\chris\PycharmProjects\PythonProject\.venv\data\In
 complaints = []
 vocabulary = []
 
-for record in corpus.iterrows():
+for record in corpus.itertuples(index=False, name=None):
     r_tokenized = word_tokenize(record)
     complaint = [word.lower() for word in r_tokenized if word.isalpha()]
     complaints.append(complaint)
