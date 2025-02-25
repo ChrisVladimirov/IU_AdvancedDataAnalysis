@@ -11,7 +11,8 @@ complaints = []
 vocabulary = []
 
 for record in corpus.itertuples(index=False, name=None):
-    r_tokenized = word_tokenize(record)
+    record_text = " ".join([str(value) for value in record])
+    r_tokenized = word_tokenize(record_text)
     complaint = [word.lower() for word in r_tokenized if word.isalpha()]
     complaints.append(complaint)
     for word in complaint:
@@ -20,4 +21,4 @@ for record in corpus.itertuples(index=False, name=None):
 
 len_vocabulary = len(vocabulary)
 print(len_vocabulary)
-print(vocabulary)
+print("\n".join(vocabulary))
