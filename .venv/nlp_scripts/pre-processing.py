@@ -3,6 +3,8 @@ from nltk.tokenize import word_tokenize
 from collections import defaultdict
 import pandas as pd
 import nltk as nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')
 
 corpus = pd.read_csv('C:/Users\chris\PycharmProjects\PythonProject\.venv\data\Insurance_Company_Complaints__Resolutions__Status__and_Recoveries.csv')
 complaints = []
