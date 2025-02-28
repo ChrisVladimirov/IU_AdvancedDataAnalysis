@@ -1,15 +1,75 @@
-from sklearn.decomposition import TruncatedSVD
-from TF_IDF import dataframe
-from sklearn.feature_extraction.text import TfidfVectorizer
-from gensim.models.coherencemodel import CoherenceModel
-from gensim.corpora.dictionary import Dictionary
+if __name__ == '__main__':
 
-vectorizer = TfidfVectorizer(use_idf=True, max_features=5, smooth_idf=True)
-model = vectorizer.fit_transform(dataframe)
+    from sklearn.decomposition import TruncatedSVD
+    from gensim.models.coherencemodel import CoherenceModel
+    from gensim.corpora.dictionary import Dictionary
+    import pandas as pd
+    from nltk.tokenize import word_tokenize
+    import nltk as nltk
+    from nltk.corpus import stopwords
 
-LSA_model = TruncatedSVD(n_components=2, algorithm='randomized', n_iter=10)
-lsa = LSA_model.fit_transform(model)
-l = lsa[0]
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt')
 
-#for i, topic in enumerate(lsa):
-#    print("Topic ",i," : ", topic * 100)
+    try:
+        nltk.data.find('corpora/stopwords')
+    except LookupError:
+        nltk.download('stopwords')
+
+    try:
+        nltk.data.find('tokenizers/punkt_tab')
+    except LookupError:
+        nltk.download('punkt_tab')
+
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+    corpus = pd.read_csv('C:\\Users\chris\PycharmProjects\PythonProject\.venv\data\Insurance_Company_Complaints__Resolutions__Status__and_Recoveries.csv')
+    complaints = []
+    vocabulary = set() #storing unique terms from across the corpus
+
+    stop_words = set(stopwords.words('english'))
+
+    for record in corpus.itertuples(index=False, name=None):
+        record_text = " ".join([str(value) for value in record])
+        r_tokenized = word_tokenize(record_text)
+        complaint = [word.lower() for word in r_tokenized if word.isalpha() and word not in stop_words and len(word) >= 2]
+        complaints.append(" ".join(complaint))
+        vocabulary.update(complaint)
+
+    vect = TfidfVectorizer(min_df=1)
+    data = vect.fit_transform(complaints)
+
+    dataframe = pd.DataFrame(data.toarray(), columns=vect.get_feature_names_out())
+
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+
+    # Ensure each document in 'complaints' is a list of tokens
+    texts = [doc.split() for doc in complaints]
+
+    # Create a Gensim Dictionary and Corpus
+    dictionary = Dictionary(texts)
+    corpus = [dictionary.doc2bow(text) for text in texts]
+
+    # Use the existing TF-IDF matrix 'dataframe' without re-vectorizing
+    model = dataframe.values  # Convert to numpy array
+
+    # Reduce dimensions using TruncatedSVD
+    n_components = 100
+    LSA_model = TruncatedSVD(n_components=n_components, algorithm='randomized', n_iter=10)
+    lsa = LSA_model.fit_transform(model)
+
+    # Extract Topics from LSA
+    topics = []
+    for i in range(n_components):
+        topic_terms = LSA_model.components_[i]
+        terms = [dataframe.columns[idx] for idx in topic_terms.argsort()[-10:]]
+        topics.append(terms)
+
+    # Calculate Coherence Score using the 'c_v' method
+    coherence_model_cv = CoherenceModel(topics=topics, texts=texts, dictionary=dictionary, coherence='c_v')
+    coherence_cv = coherence_model_cv.get_coherence()
+
+    print(f'C_V Coherence Score: {coherence_cv}')
