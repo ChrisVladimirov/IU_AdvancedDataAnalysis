@@ -36,6 +36,7 @@ if __name__ == '__main__':
     topic_percentage = (topic_importance / topic_importance.sum()) * 100
 
     with open('LDA_topicsImportance.txt', 'w') as f:
+        f.write(f'C_V Coherence Score: {coherence_cv}\n')
         for i, topic in enumerate(topics):
             f.write(f"Topic {i + 1} ({topic_percentage[i]:.2f}% importance):\n")
             f.write(" ".join(topic) + "\n\n")

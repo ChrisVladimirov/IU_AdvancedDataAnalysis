@@ -82,6 +82,7 @@ if __name__ == '__main__':
 
     # Save the topics and their percentages to a .txt file
     with open('LSA_topicsImportance.txt', 'w') as f:
+        f.write(f'C_V Coherence Score: {coherence_cv}\n')
         for i, topic in enumerate(topics):
             f.write(f"Topic {i + 1} ({topic_percentage[i]:.2f}% importance):\n")
             f.write(" ".join(topic) + "\n\n")

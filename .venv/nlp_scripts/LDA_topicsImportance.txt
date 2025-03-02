@@ -1,30 +1,31 @@
-C_V Coherence Score: 0.5304457733302599
-Topic 1 (10.34% importance):
-watercraft violation vernon unapproved worcester willing union wellcare trumbull us
+C_V Coherence Score: 0.5034286082179692
+Topic 1 (9.60% importance):
+universal united wilco wellness vanliner victoria wilton unit trust usa
 
-Topic 2 (9.84% importance):
-victoria unjustified westchester usaa vision ucr upheld title treaty united
+Topic 2 (10.14% importance):
+workers vernon thrivent viking westport use voya unapproved unitrin xl
 
-Topic 3 (9.69% importance):
-signature student secure solutions select windstorm wells ur towing usa
+Topic 3 (10.24% importance):
+title value unfair warranty venerable world westchester voyager transportation usual
 
-Topic 4 (10.39% importance):
-virginia time with transamerica unfair vigilant underwrtng wausau trust workers
+Topic 4 (10.34% importance):
+unauthorized travel virginia utica the union wells unlicensed umbrella written
 
-Topic 5 (9.64% importance):
-revere securian risks valley vantis universal warranty york west written
+Topic 5 (9.80% importance):
+sentry stewart replacement wright underwriters unicare wellfleet transamerica wilcac withdrawn
 
-Topic 6 (9.69% importance):
-whole truck utica waiver voyager voya twin viking wright underinsured
+Topic 6 (9.80% importance):
+steam unprofessional unjustified whole vantis wisconsin vermont underinsured typtap uninsured
 
-Topic 7 (9.79% importance):
-talcott sent steadfast westport vanliner washington unitrin wilcac unknown unity
+Topic 7 (10.09% importance):
+republic shelterpoint york treaty unsatisfactory upheld willing us wausau unum
 
-Topic 8 (10.24% importance):
-settlement root transguard wesco trenwick transportation texas wellness usual typtap
+Topic 8 (10.34% importance):
+waiver washington violation twin tower verify watercraft underwrtng time truck
 
-Topic 9 (10.39% importance):
-wilco zurich wisconsin variable unum travel world value withdrawn underwriters
+Topic 9 (9.90% importance):
+states windstorm tokio unknown vision western ucr vigilant zurich unitedhealthcare
 
-Topic 10 (9.99% importance):
-substantiated umbrella unicare xl tower waiting termination unlicensed theft unsatisfactory
+Topic 10 (9.75% importance):
+substantiated risk sun surety voluntary transguard texas usaa towing valley
+
