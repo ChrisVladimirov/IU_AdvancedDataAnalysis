@@ -4,9 +4,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from pre_processing import complaints
 
 vect = TfidfVectorizer(min_df=1)
-dataframe = vect.fit_transform(complaints)
+document_termMatrix = vect.fit_transform(complaints)
 
-dataframe = pd.DataFrame(dataframe.toarray(), columns=vect.get_feature_names_out())
+dataframe = pd.DataFrame(document_termMatrix.toarray(), columns=vect.get_feature_names_out())
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)

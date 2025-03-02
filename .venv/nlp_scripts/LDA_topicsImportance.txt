@@ -1,0 +1,30 @@
+C_V Coherence Score: 0.5304457733302599
+Topic 1 (10.34% importance):
+watercraft violation vernon unapproved worcester willing union wellcare trumbull us
+
+Topic 2 (9.84% importance):
+victoria unjustified westchester usaa vision ucr upheld title treaty united
+
+Topic 3 (9.69% importance):
+signature student secure solutions select windstorm wells ur towing usa
+
+Topic 4 (10.39% importance):
+virginia time with transamerica unfair vigilant underwrtng wausau trust workers
+
+Topic 5 (9.64% importance):
+revere securian risks valley vantis universal warranty york west written
+
+Topic 6 (9.69% importance):
+whole truck utica waiver voyager voya twin viking wright underinsured
+
+Topic 7 (9.79% importance):
+talcott sent steadfast westport vanliner washington unitrin wilcac unknown unity
+
+Topic 8 (10.24% importance):
+settlement root transguard wesco trenwick transportation texas wellness usual typtap
+
+Topic 9 (10.39% importance):
+wilco zurich wisconsin variable unum travel world value withdrawn underwriters
+
+Topic 10 (9.99% importance):
+substantiated umbrella unicare xl tower waiting termination unlicensed theft unsatisfactory

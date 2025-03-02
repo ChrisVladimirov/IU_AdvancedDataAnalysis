@@ -21,5 +21,5 @@ for record in corpus.itertuples(index=False, name=None):
     complaints.append(" ".join(complaint))
     vocabulary.update(complaint)
 
-print(vocabulary)
-print(len(vocabulary))
+#print(vocabulary)
+#print(len(vocabulary))

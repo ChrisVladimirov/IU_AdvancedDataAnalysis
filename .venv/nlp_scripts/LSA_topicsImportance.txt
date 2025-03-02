@@ -1,0 +1,30 @@
+Topic 1 (24.63% importance):
+plans position insurance inc closed handling health company claim nan
+
+Topic 2 (14.11% importance):
+medical necessity provider group nan only anthem plans inc health
+
+Topic 3 (9.66% importance):
+refund life action homeowners rating policyholder service underwriting premium nan
+
+Topic 4 (9.30% importance):
+underwriting upheld homeowners policyholder premium company life service substantiated position
+
+Topic 5 (8.44% importance):
+company medical anthem necessity plans denial upheld substantiated position homeowners
+
+Topic 6 (8.21% importance):
+unsatisfactory insurance question issue paid life settled nan claim homeowners
+
+Topic 7 (7.12% importance):
+company medical necessity care long term cigna nan denial life
+
+Topic 8 (5.86% importance):
+long term plans anthem provision life contract question provider issue
+
+Topic 9 (6.26% importance):
+issue question only group action no denial medically ur necessary
+
+Topic 10 (6.41% importance):
+position unitedhealthcare provider provision nan contract question benefits issue connecticare
+

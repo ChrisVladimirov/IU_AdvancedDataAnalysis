@@ -1,3 +1,5 @@
+import math
+
 if __name__ == '__main__':
 
     from sklearn.decomposition import TruncatedSVD
@@ -7,6 +9,7 @@ if __name__ == '__main__':
     from nltk.tokenize import word_tokenize
     import nltk as nltk
     from nltk.corpus import stopwords
+    import numpy as np
 
     try:
         nltk.data.find('tokenizers/punkt')
@@ -57,7 +60,7 @@ if __name__ == '__main__':
     model = dataframe.values  # Convert to numpy array
 
     # Reduce dimensions using TruncatedSVD
-    n_components = 100
+    n_components = 10
     LSA_model = TruncatedSVD(n_components=n_components, algorithm='randomized', n_iter=10)
     lsa = LSA_model.fit_transform(model)
 
@@ -73,3 +76,18 @@ if __name__ == '__main__':
     coherence_cv = coherence_model_cv.get_coherence()
 
     print(f'C_V Coherence Score: {coherence_cv}')
+
+    topic_importance = np.abs(lsa).sum(axis=0)
+    topic_percentage = (topic_importance / topic_importance.sum()) * 100
+
+    # Save the topics and their percentages to a .txt file
+    with open('LSA_topicsImportance.txt', 'w') as f:
+        for i, topic in enumerate(topics):
+            f.write(f"Topic {i + 1} ({topic_percentage[i]:.2f}% importance):\n")
+            f.write(" ".join(topic) + "\n\n")
+
+    # Print the topics and their percentages
+    for i, topic in enumerate(topics):
+        print(f"Topic {i + 1} ({topic_percentage[i]:.2f}% importance):")
+        print(" ".join(topic))
+        print()
